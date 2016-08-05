@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Rinput</title>
+        <style>
+            body {
+                font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+                font-size: 100%;
+                width: 300px;
+            }
+            h2 {
+                font-weight: 400;
+                font-size: 1rem;
+                font-style: italic;
+            }
+            label, textarea, input {
+                display: block;
+            }
+            textarea, input {
+                width: 100%;
+            }
+            input {
+                background-color: hsl(110, 30%, 50%);
+                border: none;
+                color: white;
+                padding: 0.5rem;
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+            textarea {
+                height: 4rem;
+                resize: none;
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            .comments {
+                max-height: 10rem;
+                overflow-y: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Rinput</h1>
+        <h2>Enter a comment about <span class="url"></span>!</h2>
+        <form method="POST" action="http://rinput.herokuapp.com/comments">
+            <textarea name="message" class="comment"></textarea>
+            <input class="site-url" type="hidden" name="site_url" />
+            <input type="submit" value="Add Comment" />
+        </form>
+        <ul class="comments">
+        </ul>
+        <script src="jquery.js"></script>
+        <script src="popup.js"></script>
+    </body>
